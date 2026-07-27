@@ -1,0 +1,212 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>woody Board</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#faf8f5; --panel:#ffffff;
+  --ink:#26221e; --ink2:#6e675f; --ink3:#98918a;
+  --line:rgba(38,34,30,.13);
+  --accent:#d12e77; --accent-soft:rgba(209,46,119,.09);
+  --work:#2563a8;  --work-bg:rgba(37,99,168,.10);
+  --wait:#a8720f;  --wait-bg:rgba(168,114,15,.12);
+  --next:#6e675f;  --next-bg:rgba(110,103,95,.10);
+  --done:#2f7d4f;  --done-bg:rgba(47,125,79,.11);
+  --shadow:0 1px 2px rgba(38,34,30,.04),0 6px 18px rgba(38,34,30,.05);
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --bg:#1b1916; --panel:#242118;
+    --panel:#23201c;
+    --ink:#f0ece7; --ink2:#a8a199; --ink3:#7d766e;
+    --line:rgba(240,236,231,.13);
+    --accent:#ef5f9c; --accent-soft:rgba(239,95,156,.13);
+    --work:#6ea8e0;  --work-bg:rgba(110,168,224,.14);
+    --wait:#d9a544;  --wait-bg:rgba(217,165,68,.14);
+    --next:#a8a199;  --next-bg:rgba(168,161,153,.12);
+    --done:#63b787;  --done-bg:rgba(99,183,135,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 22px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1b1916; --panel:#23201c;
+  --ink:#f0ece7; --ink2:#a8a199; --ink3:#7d766e;
+  --line:rgba(240,236,231,.13);
+  --accent:#ef5f9c; --accent-soft:rgba(239,95,156,.13);
+  --work:#6ea8e0;  --work-bg:rgba(110,168,224,.14);
+  --wait:#d9a544;  --wait-bg:rgba(217,165,68,.14);
+  --next:#a8a199;  --next-bg:rgba(168,161,153,.12);
+  --done:#63b787;  --done-bg:rgba(99,183,135,.14);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 22px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#faf8f5; --panel:#ffffff;
+  --ink:#26221e; --ink2:#6e675f; --ink3:#98918a;
+  --line:rgba(38,34,30,.13);
+  --accent:#d12e77; --accent-soft:rgba(209,46,119,.09);
+  --work:#2563a8;  --work-bg:rgba(37,99,168,.10);
+  --wait:#a8720f;  --wait-bg:rgba(168,114,15,.12);
+  --next:#6e675f;  --next-bg:rgba(110,103,95,.10);
+  --done:#2f7d4f;  --done-bg:rgba(47,125,79,.11);
+  --shadow:0 1px 2px rgba(38,34,30,.04),0 6px 18px rgba(38,34,30,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI Variable","Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:36px 18px 72px}
+header .brand{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(1.7rem,5.5vw,2.2rem);font-weight:750;letter-spacing:-.02em;line-height:1.12;margin:8px 0 6px;text-wrap:balance}
+.sub{color:var(--ink2);margin:0;max-width:56ch}
+.stand{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--panel);font-size:.85rem;color:var(--ink2)}
+.stand b{color:var(--ink);font-weight:650}
+section{margin-top:36px}
+h2{display:flex;align-items:center;gap:9px;font-size:1.05rem;font-weight:700;letter-spacing:-.005em;margin:0 0 4px}
+h2 .dot{width:10px;height:10px;border-radius:50%;flex:none}
+h2 .n{margin-left:auto;font-size:.78rem;font-weight:600;color:var(--ink3);font-variant-numeric:tabular-nums}
+.sectsub{margin:0 0 14px;font-size:.86rem;color:var(--ink3)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(min-width:560px){.kpis{grid-template-columns:repeat(5,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;box-shadow:var(--shadow)}
+.kpi span{display:block;font-size:.72rem;font-weight:600;letter-spacing:.02em;color:var(--ink2)}
+.kpi b{display:block;margin-top:3px;font-size:1.3rem;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.kpinote{margin:10px 0 0;font-size:.78rem;color:var(--ink3)}
+.cards{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
+.card .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.card h3{margin:0;font-size:.98rem;font-weight:680;letter-spacing:-.005em;line-height:1.35}
+.tag{font-size:.68rem;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);
+  border:1px solid var(--line);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.chip{margin-left:auto;font-size:.72rem;font-weight:650;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.chip.work{color:var(--work);background:var(--work-bg)}
+.chip.wait{color:var(--wait);background:var(--wait-bg)}
+.chip.done{color:var(--done);background:var(--done-bg)}
+.card p{margin:7px 0 0;font-size:.9rem;color:var(--ink2);max-width:62ch}
+.card p b{color:var(--ink);font-weight:640}
+.datum{font-size:.75rem;color:var(--ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+ul.next{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.next li{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:11px 15px;
+  font-size:.9rem;color:var(--ink);box-shadow:var(--shadow)}
+ul.next li small{display:block;color:var(--ink3);font-size:.78rem;margin-top:2px}
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink3);line-height:1.6}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="brand">woody® Onlineshop</div>
+  <h1>Digital-Operations Board</h1>
+  <p class="sub">Der laufende Überblick über die Digital-Arbeit: Shop, Werbung, Newsletter, Technik. Was gerade läuft, was auf Freigabe wartet und was zuletzt erledigt wurde.</p>
+  <div class="stand">Stand: <b>Montag, 27.07.2026, 11:30</b></div>
+</header>
+
+<section aria-label="Kennzahlen">
+  <h2><span class="dot" style="background:var(--accent)"></span>Zahlen der Woche</h2>
+  <p class="sectsub">Rollierende 7 Tage (20.07. bis 26.07.), Quelle: Shopify</p>
+  <div class="kpis">
+    <div class="kpi"><span>Umsatz gestern (So)</span><b>€ 9.574</b></div>
+    <div class="kpi"><span>Bestellungen gestern</span><b>45</b></div>
+    <div class="kpi"><span>Umsatz 7 Tage</span><b>€ 38.549</b></div>
+    <div class="kpi"><span>Umsatz je Werbe-Euro</span><b>6,0</b></div>
+    <div class="kpi"><span>Ø-Bestellwert</span><b>€ 179</b></div>
+  </div>
+  <p class="kpinote">Umsatz je Werbe-Euro = Gesamtumsatz geteilt durch Werbeausgaben (Meta und Google zusammen). Zielkorridor: über 6.</p>
+</section>
+
+<section aria-label="In Arbeit">
+  <h2><span class="dot" style="background:var(--work)"></span>In Arbeit<span class="n">4</span></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="top"><h3>Newsletter-Plan August</h3><span class="tag">Newsletter</span><span class="chip work">läuft</span></div>
+      <p>Zehn Sendungen bis 30.08. sind durchgeplant, die Texte entstehen laufend. Nächster Versand: <b>Mittwoch, 29.07.</b></p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Programm zur Umsatz-Optimierung</h3><span class="tag">Shop</span><span class="chip work">läuft</span></div>
+      <p>Alle Verbesserungs-Ideen für Shop und Produktseiten wurden gesammelt, bewertet und in eine feste Reihenfolge gebracht. Jede Maßnahme bekommt vorab festgelegte Messkriterien, damit hinterher klar ist, was sie gebracht hat.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Kopfzeile der Website verschlanken</h3><span class="tag">Shop</span><span class="chip work">läuft</span></div>
+      <p>Die Hinweisleiste ganz oben wird auf eine Zeile halbiert. Auf dem Handy wird damit spürbar mehr vom Shop sichtbar, und die Seite lädt schneller.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Analyse der Kaufabbrüche an der Kasse</h3><span class="tag">Shop</span><span class="chip work">läuft</span></div>
+      <p>85 von 100 Besuchern, die den Kassenbereich erreichen, schließen den Kauf nicht ab. Die Ursache wird gerade mit Bildschirm-Aufzeichnungen und Kundenfeedback ermittelt, bevor etwas umgebaut wird.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Wartet auf Freigabe">
+  <h2><span class="dot" style="background:var(--wait)"></span>Wartet auf Freigabe<span class="n">4</span></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="top"><h3>Produktseiten-Umbau (mobil)</h3><span class="tag">Shop</span><span class="chip wait">bei der GF</span></div>
+      <p>Fertig gebaut und getestet: Preis, Farbauswahl und Kauf-Button rücken am Handy nach oben, dazu ein fixierter Kauf-Button. Die Vorher/Nachher-Unterlagen liegen <b>seit 24.07. bei der Geschäftsführung</b>. Nach der Freigabe folgt der gemeinsame Live-Termin mit Sandro.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Stückkosten je Modell</h3><span class="tag">Zahlen</span><span class="chip wait">bei der GF</span></div>
+      <p>Am 27.07. mündlich angefragt. Mit der Liste lässt sich erstmals der echte Gewinn je Bestellung und je Werbekanal auswerten, statt nur des Umsatzes.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Pflegeset-Angebot nach dem Kauf</h3><span class="tag">Shop</span><span class="chip wait">startklar</span></div>
+      <p>Direkt nach dem Kauf wird das woody Pflegeset (45 statt 59 Euro) mit einem Klick angeboten, ohne neuen Bezahlvorgang. Fertig eingerichtet und geprüft, der Start ist ein einzelner Schalter. Danach drei Wochen Messung.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Test-Werkzeug für Angebots-Vergleiche</h3><span class="tag">Shop</span><span class="chip wait">Budget offen</span></div>
+      <p>79 Dollar im Monat, Start für September geplant: testet am echten Shop, ob z. B. ein Garantie-Paket besser verkauft als der Dauerrabatt. Budget-Freigabe steht noch aus.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Als Nächstes">
+  <h2><span class="dot" style="background:var(--next)"></span>Als Nächstes<span class="n">5</span></h2>
+  <ul class="next">
+    <li>Newsletter am Mittwoch 29.07. und Sonntag 02.08.<small>Newsletter</small></li>
+    <li>Pflegeset-Angebot aktivieren und drei Wochen messen<small>Shop</small></li>
+    <li>Cookie-Hinweis am Handy verkleinern, er verdeckt aktuell die halbe Startseite<small>Shop</small></li>
+    <li>Startseite mobil: Bestseller und Kundenbewertungen weiter nach oben<small>Shop</small></li>
+    <li>Herbst: großer Angebots-Test (Garantie-Paket statt Dauerrabatt) mit sauberer Messung<small>Shop</small></li>
+  </ul>
+</section>
+
+<section aria-label="Erledigt">
+  <h2><span class="dot" style="background:var(--done)"></span>Erledigt<span class="n">letzte 14 Tage</span></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="top"><h3>Newsletter „Komponenten" versendet</h3><span class="tag">Newsletter</span><span class="datum">So 26.07.</span></div>
+      <p>Stärkster Sonntag seit Wochen: <b>€ 9.574 Tagesumsatz</b> bei 45 Bestellungen.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Unterlagen zum Produktseiten-Umbau übergeben</h3><span class="tag">Shop</span><span class="datum">Do 24.07.</span></div>
+      <p>Vorher/Nachher-Dokument mit allen Änderungen (Desktop und Handy) an die Geschäftsführung.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Altes Cookie-System entfernt</h3><span class="tag">Technik</span><span class="datum">Do 23.07.</span></div>
+      <p>Ein totes Alt-System hat auf jeder Seite unnötig mitgeladen. Jede Seite ist jetzt 36 KB leichter.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Newsletter „Holz, Leder, Design" versendet</h3><span class="tag">Newsletter</span><span class="datum">So 19.07.</span></div>
+      <p>Planmäßig am Sonntagmorgen an rund 34.000 Empfänger.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Mess-System bereinigt</h3><span class="tag">Technik</span><span class="datum">Mi 16.07.</span></div>
+      <p>Doppelte und veraltete Zähl-Skripte entfernt, die die Besucher-Auswertung verfälscht haben.</p>
+    </div>
+    <div class="card">
+      <div class="top"><h3>Verhaltens-Analyse des Shops abgeschlossen</h3><span class="tag">Shop</span><span class="datum">Mi 16.07.</span></div>
+      <p>Heatmaps und Bildschirm-Aufzeichnungen ausgewertet. Ergebnis: klare Prioritätenliste, Handy-Ansicht zuerst.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Dieses Board wird laufend aktuell gehalten, der Stand oben zeigt die letzte Aktualisierung. Rückfragen an Sascha.
+</footer>
+
+</div>
