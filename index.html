@@ -66,6 +66,10 @@ h1{font-size:clamp(1.7rem,5.5vw,2.2rem);font-weight:750;letter-spacing:-.02em;li
 .stand{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
   background:var(--panel);font-size:.85rem;color:var(--ink2)}
 .stand b{color:var(--ink);font-weight:650}
+.notebtn{display:inline-block;margin:14px 0 0 8px;padding:8px 16px;border-radius:999px;
+  background:var(--accent);color:#fff;font-size:.9rem;font-weight:650;text-decoration:none}
+.notebtn:hover{opacity:.92}
+.notebtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 section{margin-top:36px}
 h2{display:flex;align-items:center;gap:9px;font-size:1.05rem;font-weight:700;letter-spacing:-.005em;margin:0 0 4px}
 h2 .dot{width:10px;height:10px;border-radius:50%;flex:none}
@@ -104,7 +108,7 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
   <div class="brand">woody® Onlineshop</div>
   <h1>Digital-Operations Board</h1>
   <p class="sub">Der laufende Überblick über die Digital-Arbeit: Shop, Werbung, Newsletter, Technik. Was gerade läuft, was auf Freigabe wartet und was zuletzt erledigt wurde.</p>
-  <div class="stand">Stand: <b>Montag, 27.07.2026, 11:30</b></div>
+  <div class="stand">Stand: <b>Montag, 27.07.2026, 14:25</b></div><a class="notebtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeDHQ6NF4WfarP_oKWyG6OaoQa1NYVLjihCkoyiTtQfTr0A9g/viewform" target="_blank" rel="noopener">+ Notiz an Sascha</a>
 </header>
 
 <section aria-label="Kennzahlen">
@@ -202,6 +206,14 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <div class="top"><h3>Verhaltens-Analyse des Shops abgeschlossen</h3><span class="tag">Shop</span><span class="datum">Mi 16.07.</span></div>
       <p>Heatmaps und Bildschirm-Aufzeichnungen ausgewertet. Ergebnis: klare Prioritätenliste, Handy-Ansicht zuerst.</p>
     </div>
+  </div>
+</section>
+
+<section aria-label="Deine Notizen">
+  <h2><span class="dot" style="background:var(--accent)"></span>Deine Notizen<span class="n">0 offen</span></h2>
+  <p class="sectsub">Über den Knopf „+ Notiz an Sascha" oben landet deine Notiz direkt bei Sascha. Erledigtes bekommt hier einen Haken.</p>
+  <div class="cards">
+    <div class="card"><p>Noch keine Notizen.</p></div>
   </div>
 </section>
 
